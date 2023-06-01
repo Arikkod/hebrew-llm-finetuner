@@ -1,4 +1,4 @@
-# 🦙 Hebrew LLM Finetuner
+# 🦙🇮🇱 Hebrew LLM Finetuner
 
 [![Open In Colab](https://img.shields.io/static/v1?label=Open%20in%20Colab&message=Select%20HIGH%20RAM&color=yellow&logo=googlecolab)](https://colab.research.google.com/github/lxe/simple-llama-finetuner/blob/master/Simple_LLaMA_FineTuner.ipynb)
 [![Open In Spaces](https://img.shields.io/badge/🤗-Open%20In%20Spaces-blue.svg)](https://huggingface.co/spaces/lxe/simple-llama-finetuner)
