@@ -9,10 +9,12 @@ parser = argparse.ArgumentParser(description='Simple LLM Finetuner')
 parser.add_argument('--models', 
     nargs='+', 
     default=[
-        'decapoda-research/llama-7b-hf', 
-        'cerebras/Cerebras-GPT-2.7B', 
-        'cerebras/Cerebras-GPT-1.3B', 
-        'EleutherAI/gpt-neo-2.7B'
+        "Norod78/hebrew-gpt_neo-xl",
+        'TheBloke/wizard-vicuna-13B-GPTQ',
+        # 'decapoda-research/llama-7b-hf',
+        # 'cerebras/Cerebras-GPT-2.7B',
+        # 'cerebras/Cerebras-GPT-1.3B',
+        # 'EleutherAI/gpt-neo-2.7B'
     ],  
     help='List of models to use'
 )
