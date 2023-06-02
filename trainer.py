@@ -54,7 +54,7 @@ class Trainer():
 
         if 'GPTQ' in model_name:
             quantize_config = BaseQuantizeConfig(bits=4, group_size=128, desc_act=False)
-            self.model = AutoGPTQForCausalLM.from_quantized(model_name,
+            self.model = AutoGPTQForCausalLM.from_quantized("facebook/opt-125m",
                                                             use_safetensors=True,
                                                             device="cuda:0",
                                                             quantize_config=quantize_config)
