@@ -5,6 +5,8 @@ import transformers
 import peft
 import datasets
 from contextlib import nullcontext
+from auto_gptq import AutoGPTQForCausalLM, BaseQuantizeConfig
+
 
 from config import (
     HAS_CUDA, 
@@ -50,12 +52,23 @@ class Trainer():
         if (self.model is not None):
             self.unload_model()
 
-        self.model = transformers.AutoModelForCausalLM.from_pretrained(
-            model_name,
-            device_map=DEVICE_MAP,
-            load_in_8bit=True,
-            torch_dtype=torch.float16,
-        )
+        if 'GPTQ' in model_name:
+            quantized_model_dir = "/workspace/models/TheBloke_medalpaca-13B-GPTQ-4bit"
+            model_basename = "medalpaca-13B-GPTQ-4bit-128g.compat.no-act-order"
+            quantize_config = BaseQuantizeConfig(bits=4, group_size=128, desc_act=False)
+            self.model = AutoGPTQForCausalLM.from_quantized(quantized_model_dir,
+                                                            use_safetensors=True,
+                                                            device="cuda:0",
+                                                            quantize_config=quantize_config)
+        else:
+            self.model = transformers.AutoModelForCausalLM.from_pretrained(
+                model_name,
+                device_map=DEVICE_MAP,
+                load_in_8bit=True,
+                torch_dtype=torch.float16,
+            )
+        
+
         #Clear the collection that tracks which adapters are loaded, as they are associated with self.model
         self.loras = {}
 
