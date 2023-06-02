@@ -53,7 +53,6 @@ class Trainer():
             self.unload_model()
 
         if 'GPTQ' in model_name:
-            model_basename = "medalpaca-13B-GPTQ-4bit-128g.compat.no-act-order"
             quantize_config = BaseQuantizeConfig(bits=4, group_size=128, desc_act=False)
             self.model = AutoGPTQForCausalLM.from_quantized(model_name,
                                                             use_safetensors=True,
