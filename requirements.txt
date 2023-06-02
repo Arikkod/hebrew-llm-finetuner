@@ -5,4 +5,5 @@ git+https://github.com/huggingface/transformers.git
 accelerate
 bitsandbytes
 git+https://github.com/huggingface/peft.git
+git+https://github.com/PanQiWei/AutoGPTQ.git
 gradio
