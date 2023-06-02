@@ -11,7 +11,6 @@ parser.add_argument('--models',
     default=[
         "Norod78/hebrew-gpt_neo-xl",
         'TheBloke/wizard-vicuna-13B-GPTQ',
-        'tdklab/hebert-finetuned-hebrew-squad',
         # 'decapoda-research/llama-7b-hf',
         # 'cerebras/Cerebras-GPT-2.7B',
         # 'cerebras/Cerebras-GPT-1.3B',
