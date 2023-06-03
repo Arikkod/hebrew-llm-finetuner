@@ -10,7 +10,6 @@ parser.add_argument('--models',
     nargs='+', 
     default=[
         "Norod78/hebrew-gpt_neo-xl",
-        'TheBloke/wizard-vicuna-13B-GPTQ',
         # 'decapoda-research/llama-7b-hf',
         # 'cerebras/Cerebras-GPT-2.7B',
         # 'cerebras/Cerebras-GPT-1.3B',
